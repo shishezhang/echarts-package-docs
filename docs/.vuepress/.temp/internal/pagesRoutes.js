@@ -7,7 +7,6 @@ const routeItems = [
   ["v-0c25c1b1","/joinIn.html",{"title":"加入"},["/joinIn","/joinIn.md"]],
   ["v-8daa1a0e","/",{"title":"介绍"},["/index.html","/README.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
-  ["v-10951f24","/.~config.html",{"title":""},["/.~config","/.~config.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(
