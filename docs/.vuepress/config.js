@@ -1,7 +1,7 @@
 module.exports = {
   title: "echarts-package文档", // 设置网站标题
   description: "",
-  base: "./",
+  base: "/echarts-package-docs/",
   themeConfig: {
     nav: [
       { text: "快速上手", link: "/getStarted" },
