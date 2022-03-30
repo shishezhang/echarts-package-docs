@@ -2,7 +2,7 @@ name: ACCESS_TOKEN
 on:
   push: # 监听代码时间
     branches:
-      - mian # master分支代码推送的时候激活当前action
+      - master # master分支代码推送的时候激活当前action
 jobs:
   build:
     # runs-on 操作系统
