@@ -1,0 +1,39 @@
+name: ACCESS_TOKEN
+on:
+  push: # 监听代码时间
+    branches:
+      - master # master分支代码推送的时候激活当前action
+jobs:
+  build:
+    # runs-on 操作系统
+    runs-on: ubuntu-latest
+    steps:
+      # Job Start
+      - name: Job Start
+        run: echo Hello, GitHub workflows !
+
+      # 检出你在当前github工作空间的项目
+      - name: 迁出代码
+        uses: actions/checkout@v2
+
+      # 安装Node
+      - name: 安装Node
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: "14.x"
+          registry-url: "https://registry.npmjs.org"
+
+      # 执行JamesIves/github-pages-deploy-action将项目发布到Github Pages
+      - name: Deploy
+        uses: jenkey2011/vuepress-deploy@master
+        env:
+          # 该workflow需要操作repo，因此需要一个密钥
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # 目标repo
+          TARGET_REPO: shishezhang/echarts-package-docs
+          # 发布到的分支
+          TARGET_BRANCH: gh-pages
+          # 构建脚本
+          BUILD_SCRIPT: yarn && yarn build
+          # 要发布的文件夹
+          BUILD_DIR: blog/.vuepress/dist
