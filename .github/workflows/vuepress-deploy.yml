@@ -1,4 +1,4 @@
-name: ACCESS_TOKEN
+name: 打包的用到的
 on:
   push: # 监听代码时间
     branches:
